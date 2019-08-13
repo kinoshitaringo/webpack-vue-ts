@@ -1,5 +1,5 @@
 <template>
-  <div class="App">
+  <div id="App">
     <a-button type="primary" @click="hello">hello world</a-button>
     {{str}}
   </div>
@@ -7,13 +7,14 @@
 
 <style lang="less">
 @import url("~@less/theme.less");
-.App {
+#App {
   color: @color;
 }
 </style>
 
-<!-- <script lang="ts">
-import Vue from "vue";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+@Component
 export default class App extends Vue {
   public str: string = "";
   /**
@@ -23,4 +24,4 @@ export default class App extends Vue {
     this.str = "HELLO";
   }
 }
-</script> -->
+</script>
