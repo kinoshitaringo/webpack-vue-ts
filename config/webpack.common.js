@@ -16,11 +16,20 @@ const commonConfig = {
             {
                 test: /\.(vue)$/,
                 loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        less: 'vue-style-loader!css-loader!less-loader',
+                    }
+                }
             },
             {
                 test: /\.(tsx?)$/,
                 exclude: /(node_modules)/,
                 loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+
             },
             {
                 test: /(plugins)/,
